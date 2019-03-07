@@ -480,8 +480,10 @@ public class InkPageIndicator extends View implements CustomViewPager.OnPageChan
             }
         }
 
-        moveAnimation = createMoveSelectedAnimator(dotCenterX[now], previousPage, now, steps);
-        moveAnimation.start();
+        if (dotCenterX != null) {
+            moveAnimation = createMoveSelectedAnimator(dotCenterX[now], previousPage, now, steps);
+            moveAnimation.start();
+        }
     }
 
     private ValueAnimator createMoveSelectedAnimator(
